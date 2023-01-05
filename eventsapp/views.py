@@ -21,5 +21,11 @@ class CustomUserViewSet(viewsets.ModelViewSet):
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+    #
+    # def create(self, request, *args, **kwargs):
+    #     data = request.data.dict()
+    #     telegram_id = int(data.pop("telegram_id"))
+    #     user, _ = CustomUser.objects.get_or_create(**data, telegram_id=telegram_id)
+    #     return Response(self.serializer_class(user).data)
 
 

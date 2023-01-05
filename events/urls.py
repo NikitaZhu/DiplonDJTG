@@ -24,6 +24,5 @@ router.register(r'users', CustomUserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('event/', EventViewSet.as_view),
     path('', include(router.urls))
 ]

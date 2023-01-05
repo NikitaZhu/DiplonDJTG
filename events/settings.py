@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-fo*rx7l1iig713w2**lupvfl^!j#yks=(vn2!$1uqkag#m(ix*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -111,6 +111,8 @@ USE_TZ = True
 DATETIME_FORMAT = "%Y-%m-%d"
 
 L10N = False
+
+
 
 
 

@@ -10,7 +10,7 @@ class Event(models.Model):
     is_deleted = models.BooleanField('Удалено', default=False)
     created_at = models.DateTimeField('Создано', auto_now_add=True)
     updated_at = models.DateTimeField('Обновлено', auto_now=True)
-    chose_date = models.DateField('Запланировано', default=False)
+    chose_date = models.DateField('Запланировано', default='')
 
     def __str__(self):
         return self.title
@@ -18,7 +18,7 @@ class Event(models.Model):
 
 class CustomUser(models.Model):
     full_name = models.CharField('Фамилия_Имя', max_length=255, default='')
-    created_at = models.DateTimeField('Создано', auto_now=True, blank=True)
+    created_at = models.DateTimeField('Создано', auto_now=True)
     telegram_id = models.PositiveIntegerField('Телеграм ID', unique=True)
     username = models.CharField(max_length=20, unique=True)
 
