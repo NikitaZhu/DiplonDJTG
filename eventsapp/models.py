@@ -10,7 +10,7 @@ class Event(models.Model):
     is_deleted = models.BooleanField('Удалено', default=False)
     created_at = models.DateTimeField('Создано', auto_now_add=True)
     updated_at = models.DateTimeField('Обновлено', auto_now=True)
-    chose_date = models.DateField('Запланировано', default='')
+    chose_date = models.TextField('Запланировано', default='')
 
     def __str__(self):
         return self.title

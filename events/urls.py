@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from eventsapp.views import EventViewSet, CustomUserViewSet
+from eventsapp.views import EventViewSet, CustomUserViewSet, TgIdListView, UserEventsList
 
 router = DefaultRouter()
-router.register(r'events', EventViewSet)
-router.register(r'users', CustomUserViewSet)
+router.register(r'events', EventViewSet, basename='event')
+router.register(r'users', CustomUserViewSet, basename='user')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('telegram_id/', TgIdListView.as_view()),
+    path('eventsuser/', UserEventsList.as_view())
 ]
