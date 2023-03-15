@@ -109,7 +109,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-DATETIME_FORMAT = "%Y-%m-%d"
+DATETIME_FORMAT = "%d-%m-%Y"
 
 L10N = False
 
@@ -124,7 +124,16 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+    'DATE_INPUT_FORMATS': [("%d-%m-%Y")],
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
 }
+
+# DATE_INPUT_FORMATS = [
+#     ,
+# ]
+
+# REST_FRAMEWORK = {
+#     "DATE_INPUT_FORMATS": ["%d-%m-%Y"],
+# }
